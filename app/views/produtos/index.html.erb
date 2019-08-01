@@ -1,6 +1,7 @@
 <html>
 
 <body>
+    <h3>Produto com desconto</h3>
     <table>
         <thead>
             <tr>
@@ -11,8 +12,28 @@
             </tr>
         </thead>
         <tbody>
-        <% todos = Produto.order :descricao %>
-        <% todos.each do |produto| %>
+        <% @produtocomdesconto.each do |produto| %>
+            <tr>
+                <td><%= produto.nome %></td>
+                <td><%= produto.descricao %></td>
+                <td><%= produto.preco %></td>
+                <td><%= produto.quantidade %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Quantidade</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% @produtos.each do |produto| %>
             <tr>
                 <td><%= produto.nome %></td>
                 <td><%= produto.descricao %></td>
